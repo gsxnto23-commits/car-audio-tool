@@ -1,4 +1,4 @@
-// Audio Processing Variables
+document.addEventListener('DOMContentLoaded', () => {
 let audioContext;
 let sourceBuffer;
 let audioBuffer;
@@ -407,4 +407,5 @@ newFileBtn.addEventListener('click', () => {
     volumeValue.textContent = '100';
     bassSlider.value = 50;
     bassValue.textContent = '50';
+});
 });

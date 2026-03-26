@@ -79,6 +79,9 @@ h3 {
 .upload-area:hover {
     background: #f0f2ff;
     border-color: #764ba2;
+    border-width: 4px;
+    box-shadow: 0 8px 20px rgba(102, 126, 234, 0.2);
+    transform: translateY(-2px);
 }
 
 .upload-area.drag-over {
