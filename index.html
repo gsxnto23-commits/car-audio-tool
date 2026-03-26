@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Car Audio Tool - Volume Control</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🔊 Car Audio Tool</h1>
+            <p>Adjust audio volume easily</p>
+        </header>
+
+        <main>
+            <!-- File Upload Section -->
+            <section class="upload-section">
+                <h2>Upload Audio File</h2>
+                <div class="upload-area" id="uploadArea">
+                    <input type="file" id="audioInput" accept="audio/*" style="display: none;">
+                    <div class="upload-content">
+                        <p>📁 Click to upload or drag and drop</p>
+                        <p class="small-text">Supported: MP3, WAV, OGG, M4A</p>
+                    </div>
+                </div>
+                <p id="fileName" class="file-name"></p>
+            </section>
+
+            <!-- Audio Controls Section -->
+            <section class="controls-section" id="controlsSection" style="display: none;">
+                <h2>Audio Controls</h2>
+
+                <!-- Volume Control -->
+                <div class="control-group">
+                    <label for="volumeSlider">Volume Level</label>
+                    <div class="slider-container">
+                        <span class="label">Quieter</span>
+                        <input type="range" id="volumeSlider" min="0" max="200" value="100" class="slider">
+                        <span class="label">Louder</span>
+                    </div>
+                    <p class="value-display">Current: <span id="volumeValue">100</span>%</p>
+                </div>
+
+                <!-- Bass Boost -->
+                <div class="control-group">
+                    <label for="bassSlider">Bass Boost (Car Audio)</label>
+                    <div class="slider-container">
+                        <span class="label">Off</span>
+                        <input type="range" id="bassSlider" min="0" max="100" value="50" class="slider">
+                        <span class="label">Extra</span>
+                    </div>
+                    <p class="value-display">Current: <span id="bassValue">50</span>%</p>
+                </div>
+
+                <!-- Playback Controls -->
+                <div class="playback-controls">
+                    <button id="playBtn" class="btn btn-primary">▶ Play</button>
+                    <button id="pauseBtn" class="btn btn-secondary">⏸ Pause</button>
+                    <button id="stopBtn" class="btn btn-secondary">⏹ Stop</button>
+                </div>
+
+                <!-- Waveform Visualization -->
+                <div class="visualization">
+                    <canvas id="waveform"></canvas>
+                </div>
+
+                <!-- Time Display -->
+                <div class="time-display">
+                    <span id="currentTime">0:00</span> / <span id="duration">0:00</span>
+                </div>
+
+                <!-- Progress Bar -->
+                <div class="progress-bar-container">
+                    <div class="progress-bar" id="progressBar"></div>
+                </div>
+
+                <!-- Download Section -->
+                <div class="download-section">
+                    <button id="downloadBtn" class="btn btn-success">⬇ Download Processed Audio</button>
+                </div>
+
+                <!-- New File Button -->
+                <button id="newFileBtn" class="btn btn-secondary">📁 Upload New File</button>
+            </section>
+
+            <!-- Info Section -->
+            <section class="info-section">
+                <h3>💡 How to Use</h3>
+                <ul>
+                    <li>Upload an audio file (MP3, WAV, OGG, M4A)</li>
+                    <li>Adjust the volume slider to make it quieter or louder</li>
+                    <li>Add bass boost for that car audio feel</li>
+                    <li>Use the playback controls to hear your changes</li>
+                    <li>Download the processed audio when ready</li>
+                </ul>
+            </section>
+        </main>
+
+        <footer>
+            <p>&copy; 2026 Car Audio Tool | Process audio with ease</p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
