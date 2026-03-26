@@ -1,113 +1,151 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5827443606955987"
-     crossorigin="anonymous"></script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Car Audio Tool - Volume Control</title>
+    <title>Audio Master - Professional Audio Tool</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <div class="container">
         <header>
-            <h1>🔊 Car Audio Tool</h1>
-            <p>Adjust audio volume easily</p>
+            <div class="header-content">
+                <h1>🎵 Audio Master</h1>
+                <p>Professional Audio Processing Tool</p>
+            </div>
         </header>
 
         <main>
-            <!-- File Upload Section -->
+            <!-- Upload Section -->
             <section class="upload-section">
                 <h2>Upload Audio File</h2>
                 <div class="upload-area" id="uploadArea">
                     <input type="file" id="audioInput" accept="audio/*" style="display: none;">
-                    <div class="upload-content">
-                        <p>📁 Click to upload or drag and drop</p>
-                        <p class="small-text">Supported: MP3, WAV, OGG, M4A</p>
-                    </div>
+                    <svg class="upload-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                        <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                        <polyline points="17 8 12 3 7 8"></polyline>
+                        <line x1="12" y1="3" x2="12" y2="15"></line>
+                    </svg>
+                    <p class="upload-text">Click to upload or drag and drop</p>
+                    <p class="upload-subtext">MP3, WAV, OGG, M4A, FLAC (Max 100MB)</p>
                 </div>
-                <p id="fileName" class="file-name"></p>
+                <p id="fileName" class="file-info"></p>
             </section>
 
-            <!-- Audio Controls Section -->
+            <!-- Controls Section -->
             <section class="controls-section" id="controlsSection" style="display: none;">
                 <h2>Audio Controls</h2>
 
-                <!-- Volume Control -->
-                <div class="control-group">
-                    <label for="volumeSlider">Volume Level</label>
-                    <div class="slider-container">
-                        <span class="label">Quieter</span>
-                        <input type="range" id="volumeSlider" min="0" max="200" value="100" class="slider">
-                        <span class="label">Louder</span>
+                <!-- Slider Controls -->
+                <div class="sliders-grid">
+                    <!-- Vocal Control -->
+                    <div class="control-card">
+                        <div class="control-header">
+                            <label for="vocalSlider">Vocal Level</label>
+                            <span class="value-badge" id="vocalValue">0 dB</span>
+                        </div>
+                        <input type="range" id="vocalSlider" min="-12" max="12" value="0" class="slider">
+                        <p class="control-hint">Enhance or reduce vocal frequencies</p>
                     </div>
-                    <p class="value-display">Current: <span id="volumeValue">100</span>%</p>
-                </div>
 
-                <!-- Bass Boost -->
-                <div class="control-group">
-                    <label for="bassSlider">Bass Boost (Car Audio)</label>
-                    <div class="slider-container">
-                        <span class="label">Off</span>
-                        <input type="range" id="bassSlider" min="0" max="100" value="50" class="slider">
-                        <span class="label">Extra</span>
+                    <!-- Bass Control -->
+                    <div class="control-card">
+                        <div class="control-header">
+                            <label for="bassSlider">Bass Level</label>
+                            <span class="value-badge" id="bassValue">0 dB</span>
+                        </div>
+                        <input type="range" id="bassSlider" min="-12" max="12" value="0" class="slider">
+                        <p class="control-hint">Boost or reduce bass frequencies</p>
                     </div>
-                    <p class="value-display">Current: <span id="bassValue">50</span>%</p>
                 </div>
 
-                <!-- Playback Controls -->
-                <div class="playback-controls">
-                    <button id="playBtn" class="btn btn-primary">▶ Play</button>
-                    <button id="pauseBtn" class="btn btn-secondary">⏸ Pause</button>
-                    <button id="stopBtn" class="btn btn-secondary">⏹ Stop</button>
+                <!-- Play/Pause Controls -->
+                <div class="playback-section">
+                    <div class="playback-info">
+                        <span id="currentTime">0:00</span>
+                        <div class="progress-bar-container">
+                            <div class="progress-bar" id="progressBar"></div>
+                        </div>
+                        <span id="duration">0:00</span>
+                    </div>
+                    <div class="playback-buttons">
+                        <button id="playBtn" class="btn btn-play">▶ Play</button>
+                        <button id="pauseBtn" class="btn btn-pause">⏸ Pause</button>
+                        <button id="stopBtn" class="btn btn-stop">⏹ Stop</button>
+                    </div>
                 </div>
 
-                <!-- Waveform Visualization -->
+                <!-- Waveform -->
                 <div class="visualization">
                     <canvas id="waveform"></canvas>
                 </div>
 
-                <!-- Time Display -->
-                <div class="time-display">
-                    <span id="currentTime">0:00</span> / <span id="duration">0:00</span>
-                </div>
-
-                <!-- Progress Bar -->
-                <div class="progress-bar-container">
-                    <div class="progress-bar" id="progressBar"></div>
-                </div>
-
-                <!-- Download Section -->
-                <div class="download-section">
-                    <button id="downloadBtn" class="btn btn-success">⬇ Download Processed Audio</button>
+                <!-- Export Section -->
+                <div class="export-section">
+                    <h3>Export Settings</h3>
+                    <div class="export-grid">
+                        <div class="export-option">
+                            <label for="formatSelect">Audio Format</label>
+                            <select id="formatSelect">
+                                <option value="wav">WAV (Lossless)</option>
+                                <option value="mp3">MP3 (Lossy)</option>
+                                <option value="ogg">OGG Vorbis (Lossy)</option>
+                            </select>
+                        </div>
+                        <div class="export-option">
+                            <label for="qualitySelect">Quality</label>
+                            <select id="qualitySelect">
+                                <option value="low">Low (64 kbps)</option>
+                                <option value="medium" selected>Medium (128 kbps)</option>
+                                <option value="high">High (192 kbps)</option>
+                                <option value="ultra">Ultra (320 kbps)</option>
+                            </select>
+                        </div>
+                    </div>
+                    <button id="downloadBtn" class="btn btn-download">⬇ Download Processed Audio</button>
                 </div>
 
                 <!-- New File Button -->
-                <button id="newFileBtn" class="btn btn-secondary">📁 Upload New File</button>
+                <button id="newFileBtn" class="btn btn-secondary">📁 Upload Another File</button>
             </section>
 
             <!-- Info Section -->
             <section class="info-section">
-                <h3>💡 How to Use</h3>
-                <ul>
-                    <li>Upload an audio file (MP3, WAV, OGG, M4A)</li>
-                    <li>Adjust the volume slider to make it quieter or louder</li>
-                    <li>Add bass boost for that car audio feel</li>
-                    <li>Use the playback controls to hear your changes</li>
-                    <li>Download the processed audio when ready</li>
-                </ul>
+                <h2>How It Works</h2>
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <div class="feature-icon">📤</div>
+                        <h4>Upload</h4>
+                        <p>Support for multiple audio formats</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">🎚️</div>
+                        <h4>Adjust</h4>
+                        <p>Fine-tune vocals and bass levels</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">👁️</div>
+                        <h4>Visualize</h4>
+                        <p>Real-time waveform display</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">💾</div>
+                        <h4>Export</h4>
+                        <p>Download in your preferred format</p>
+                    </div>
+                </div>
             </section>
         </main>
 
-<footer>
-    <p>&copy; 2026 Car Audio Tool | Process audio with ease</p>
-
-    <div style="margin-top:10px;">
-        <a href="privacy.html" style="margin:0 10px;">Privacy Policy</a>
-        <a href="terms.html" style="margin:0 10px;">Terms</a>
-        <a href="contact.html" style="margin:0 10px;">Contact</a>
+        <footer>
+            <div class="footer-links">
+                <a href="about.html">About</a>
+                <a href="terms.html">Terms</a>
+                <a href="contact.html">Contact</a>
+            </div>
+            <p class="copyright">&copy; 2026 Audio Master. All rights reserved.</p>
+        </footer>
     </div>
-</footer>
 
     <script src="script.js"></script>
 </body>

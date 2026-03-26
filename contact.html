@@ -3,26 +3,103 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact Us - Car Audio Tool</title>
+    <title>Contact - Audio Master</title>
     <link rel="stylesheet" href="styles.css">
     <style>
-        body { color: #333; }
-        main { padding: 40px 30px; }
-        section { margin-bottom: 30px; }
-        h2 { color: #667eea; margin-top: 30px; margin-bottom: 15px; }
-        h3 { color: #764ba2; margin-top: 15px; margin-bottom: 10px; }
-        p, li { line-height: 1.6; color: #333; }
-        ul { margin-left: 20px; margin-bottom: 15px; }
-        a { color: #667eea; text-decoration: none; }
+        body { padding: 20px; }
+        .content { max-width: 900px; }
+        p, li { color: var(--text-primary); line-height: 1.8; margin-bottom: 15px; }
+        h3 { color: var(--primary); font-size: 1.2em; margin-top: 25px; }
+        a { color: var(--primary); text-decoration: none; }
         a:hover { text-decoration: underline; }
+        .faq-item { background: var(--background); padding: 15px; border-radius: 8px; margin-bottom: 15px; }
+        .faq-question { font-weight: 600; color: var(--primary); margin-bottom: 8px; }
     </style>
 </head>
 <body>
+    <div class="container">
+        <header>
+            <div class="header-content">
+                <h1>💬 Contact Us</h1>
+            </div>
+        </header>
 
-<div class="container">
-    <header>
-        <h1>🔊 Contact Us</h1>
-    </header>
+        <main>
+            <div class="content">
+                <h2>Get in Touch</h2>
+                <p>Have questions, feedback, or technical issues? We'd love to hear from you!</p>
+
+                <h2>Contact Information</h2>
+                <p><strong>Email:</strong> <a href="mailto:support@audiomaster.com">support@audiomaster.com</a></p>
+                <p><strong>Response Time:</strong> We aim to respond within 24-48 business hours</p>
+
+                <h2>What Can We Help With?</h2>
+                <ul style="margin-left: 20px;">
+                    <li>Technical support and troubleshooting</li>
+                    <li>Feature requests and suggestions</li>
+                    <li>Bug reports</li>
+                    <li>General inquiries</li>
+                    <li>Feedback and reviews</li>
+                </ul>
+
+                <h2>Frequently Asked Questions</h2>
+
+                <div class="faq-item">
+                    <div class="faq-question">Q: What audio formats are supported?</div>
+                    <p>A: Audio Master supports MP3, WAV, OGG, and M4A formats. We can process virtually any audio format that your browser supports.</p>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">Q: Is my audio file stored on your servers?</div>
+                    <p>A: No. All audio processing happens locally on your device. We never upload, store, or access your audio files.</p>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">Q: What web browsers are supported?</div>
+                    <p>A: Audio Master works on modern browsers including Chrome, Firefox, Safari, and Edge. We recommend using the latest version for best performance.</p>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">Q: Can I use Audio Master on mobile?</div>
+                    <p>A: Audio Master is optimized for desktop browsers. Mobile support is limited due to browser capabilities, but you can try it on your tablet.</p>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">Q: What's the maximum file size I can upload?</div>
+                    <p>A: The file size depends on your browser and available RAM. Most modern browsers can handle files up to 1GB or more.</p>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">Q: Does Audio Master cost anything?</div>
+                    <p>A: Audio Master is completely free to use. No registration or payment required.</p>
+                </div>
+
+                <h2>Report a Bug</h2>
+                <p>If you encounter any technical issues, please email us with:</p>
+                <ul style="margin-left: 20px;">
+                    <li>A detailed description of the problem</li>
+                    <li>Your browser and operating system</li>
+                    <li>Steps to reproduce the issue</li>
+                </ul>
+
+                <h2>Feature Requests</h2>
+                <p>We're always looking to improve Audio Master! Share your ideas and suggestions by emailing us with your feature request.</p>
+
+                <p style="margin-top: 40px; text-align: center;"><a href="index.html">← Back to Home</a></p>
+            </div>
+        </main>
+
+        <footer>
+            <div class="footer-links">
+                <a href="about.html">About</a>
+                <a href="terms.html">Terms</a>
+                <a href="contact.html">Contact</a>
+            </div>
+            <p class="copyright">&copy; 2026 Audio Master. All rights reserved.</p>
+        </footer>
+    </div>
+</body>
+</html>
     <main>
         <section>
             <h2>Get in Touch</h2>
