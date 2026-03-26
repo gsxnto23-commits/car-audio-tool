@@ -17,5 +17,9 @@
   "bugs": {
     "url": "https://github.com/gsxnto23-commits/car-audio-tool/issues"
   },
-  "homepage": "https://github.com/gsxnto23-commits/car-audio-tool#readme"
+  "homepage": "https://github.com/gsxnto23-commits/car-audio-tool#readme",
+  "dependencies": {
+    "express": "^5.2.1",
+    "multer": "^2.1.1"
+  }
 }
