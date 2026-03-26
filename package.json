@@ -1,0 +1,21 @@
+{
+  "name": "car-audio-tool",
+  "version": "1.0.0",
+  "description": "",
+  "main": "script.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gsxnto23-commits/car-audio-tool.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/gsxnto23-commits/car-audio-tool/issues"
+  },
+  "homepage": "https://github.com/gsxnto23-commits/car-audio-tool#readme"
+}
